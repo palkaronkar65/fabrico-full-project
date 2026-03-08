@@ -1,0 +1,34 @@
+@import "tailwindcss";
+/* Smooth transitions for interactive elements */
+button, input, a {
+  transition: all 0.2s ease;
+}
+
+/* Better scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide the default file input appearance */
+input[type="file"]::file-selector-button {
+  display: none;
+}
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;      /* Light track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5;      /* Indigo (matches Dashboard theme) */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4338ca;
+}

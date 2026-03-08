@@ -1,0 +1,18 @@
+{
+  "name": "fabrico-fullstack",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix fabrico-admin/backend && npm install --prefix fabrico-admin/admin-fabrico && npm install --prefix fabrico-client/server && npm install --prefix fabrico-client/client",
+    "install:admin": "npm install --prefix fabrico-admin/backend && npm install --prefix fabrico-admin/admin-fabrico",
+    "install:client": "npm install --prefix fabrico-client/server && npm install --prefix fabrico-client/client",
+    "install:delivery": "npm install --prefix delivery-partner-fabrico/backend && npm install --prefix delivery-partner-fabrico/delivery-partner",
+    "start:admin": "concurrently \"npm start --prefix fabrico-admin/backend\" \"npm run dev --prefix fabrico-admin/admin-fabrico\"",
+    "start:client": "concurrently \"npm start --prefix fabrico-client/server\" \"npm run dev --prefix fabrico-client/client\"",
+    "start:delivery": "concurrently \"npm start --prefix delivery-partner-fabrico/backend\" \"npm run dev --prefix delivery-partner-fabrico/delivery-partner\"",
+
+    "start:all": "concurrently \"npm run start:admin\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

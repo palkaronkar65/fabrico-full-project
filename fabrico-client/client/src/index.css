@@ -1,0 +1,54 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+
+/* index.css */
+.step {
+  @apply flex flex-col items-center relative;
+  flex: 1;
+}
+
+.step:not(:last-child):after {
+  content: '';
+  @apply absolute top-5 left-1/2 w-full h-0.5 bg-gray-300;
+}
+
+.step-number {
+  @apply w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 mb-2;
+}
+
+.step.active .step-number {
+  @apply border-blue-600 bg-blue-600 text-white;
+}
+
+.step-title {
+  @apply text-sm font-medium;
+}
+
+/* modern thin scrollbar — add to your global CSS */
+:root {
+  --scroll-thumb: rgba(0,0,0,0.12);
+  --scroll-thumb-hover: rgba(0,0,0,0.2);
+}
+
+/* Chrome, Edge, Safari */
+.scrollbar-modern::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-modern::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-modern::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 9999px;
+}
+.scrollbar-modern::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+/* Firefox */
+.scrollbar-modern {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scroll-thumb) transparent;
+}
